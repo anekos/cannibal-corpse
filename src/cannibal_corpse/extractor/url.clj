@@ -19,6 +19,13 @@
                  "")})))
 
 
+(defn- extract-amazon-product-id [path]
+  path)
+
+
 (defn extract-url [url]
   (let [url (parse-url url)]
-    url))
+    (cond
+      (= "amazon" (:domain "amazon.co.jp"))
+      {:site 'amazon
+       :id (extract-amazon-product-id (:path url))})))
