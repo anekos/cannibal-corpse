@@ -19,13 +19,19 @@
                  "")})))
 
 
-(defn- extract-amazon-product-id [path]
-  path)
+(defn- extract-amazon-product-id [url]
+  (second
+    (re-find
+      #".*?/?(?:[a-z]p|ASIN)/(?:product/)?([^/]+).*"
+      (:path url))))
 
 
-(defn extract-url [url]
+(defn extract-url
+  "http://www.amazon.co.jp/dp/XYZ => {:site amazon.co.jp
+                                      :id XYZ}"
+  [url]
   (let [url (parse-url url)]
     (cond
-      (= "amazon" (:domain "amazon.co.jp"))
-      {:site 'amazon
-       :id (extract-amazon-product-id (:path url))})))
+      (= "amazon.co.jp" (:domain url))
+      {:site 'amazon.co.jp
+       :id (extract-amazon-product-id url)})))
