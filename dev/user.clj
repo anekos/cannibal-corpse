@@ -4,7 +4,7 @@
             [clojure.pprint :refer [pp pprint cl-format]]
             [net.cgrand.enlive-html :as eh]
             [clojure.java.io :refer [reader writer file]]
-            [cannibal-corpse.extractor.util :refer :all]))
+            [cannibal-corpse.extractor.page.util :refer :all]))
 
 
 (defn cache-from-file []

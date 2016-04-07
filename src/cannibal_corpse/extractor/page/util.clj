@@ -1,4 +1,4 @@
-(ns cannibal-corpse.extractor.util
+(ns cannibal-corpse.extractor.page.util
   (:require [clojure.string :as string]
             [net.cgrand.enlive-html :as eh]))
 

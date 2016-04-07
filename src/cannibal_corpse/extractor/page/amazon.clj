@@ -1,5 +1,5 @@
-(ns cannibal-corpse.extractor.amazon
-  (:require [cannibal-corpse.extractor.util :refer :all]
+(ns cannibal-corpse.extractor.page.amazon
+  (:require [cannibal-corpse.extractor.page.util :refer :all]
             [net.cgrand.enlive-html :as eh]))
 
 
